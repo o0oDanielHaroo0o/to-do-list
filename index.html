@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List by Daniel Haro</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body id="body">
+    <header class="header">
+        <img class="bg-image"  alt="background image" srcset="./images/bg-desktop-light.jpg 1440w, ./images/bg-mobile-light.jpg 375w" src="./images/bg-desktop-light.jpg">
+        <img class="bg-image hide"  alt="background image" srcset="./images/bg-desktop-dark.jpg 1440w, ./images/bg-mobile-dark.jpg 375w" src="./images/bg-desktop-dark.jpg">
+        <div class="title">
+            <div>
+                <h1 id="listTitle">Tareas Pendientes</h1>
+                <img class="edit-title icon hide" src="./images/edit.svg" alt="edit button" tabindex="0">
+                <img class="edit-title icon hide" src="./images/save.svg" alt="save button" tabindex="0">
+            </div>                
+            <img class="mode-icon icon" src="./images/dark_mode.svg" alt="dark mode icon" tabindex="0">
+            <img class="mode-icon icon hide" src="./images/light_mode.svg" alt="light mode icon" tabindex="0">
+        </div>
+        <div class="input-box">
+            <input class="input" id="elementInput" type="text" placeholder="¡Añade un elemento!">
+            <input class="input" id="descriptionInput" type="text" placeholder="¡Añade una descripción! (opcional)">
+            <div>
+                <input class="button" id="addButton" type="button" value="Añadir a la lista">
+                <input class="button button--red" id="removeButton" type="button" value="Eliminar todo">
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div id="container" class="container">
+            <ul class="to-do-list" id="toDoList">
+            </ul>
+            <div class="list-footer">
+                <p class="display-controls">
+                    <span class="filter filter--current" id="showAll" tabindex="0">Todos</span>
+                    <span class="filter" id="showPending" tabindex="0">Pendientes</span>
+                    <span class="filter" id="showCompleted" tabindex="0">Completados</span>
+                </p>
+                <p id="pendingItems"></p>
+                <p><span class="clear-completed" id="clearCompleted" tabindex="0">Borrar completados</span></p>
+            </div>
+        </div>
+        <p class="drag-instructions">Arrastra los elementos para reordenar la lista</p>
+    </main>
+
+    <script src="./js/to-do-list-app.js"></script>
+    <script src="./js/dark-mode.js"></script>
+</body>
+</html>
